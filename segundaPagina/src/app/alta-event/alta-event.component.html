@@ -1,0 +1,65 @@
+  <!-- <H1 class="h1">ALTA EVENTO</H1>
+<form>
+    <div class="margenes">
+        <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" #newEvent required> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Localicacion Evento</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Barcelona, San cugat del vallés" #newEvent required>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="Ciudad"  #newEvent required>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputdisponible">Disponible</label>
+                <select id="inputdisponible" class="form-control">
+                  <option selected>No Disponible</option>
+                  <option>Disponible<option>
+                    <option></option>
+                </select>
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                <label class="form-check-label" for="gridCheck">
+                  Aceptas los terminos y condiciones de la pagina
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+          </form>
+
+    </div>
+    <app-eventos></app-eventos>
+  </form>   -->
+
+  <div class="medio">
+  <h1>ALTA EVENTOS</h1>
+<form (submit)="addEvento(newEvent)">
+    <input type="text" placeholder="Evento" required #newEvent><br>
+    <input type="email" placeholder="Correo"><br>
+    <label>Aceptas los terminos y condiciones de la pagina.</label>
+    <input type="checkbox"><br>
+    <button>
+        Registrar Evento
+    </button>
+  </form>
+  <ul>
+    <li *ngFor="let listEvent of listEvent">
+      {{listEvent}} <button (click)="eliminarEvento(listEvent)">Borrar</button>
+    </li>
+</ul>
+</div>
+
+  <app-eventos></app-eventos>
+
